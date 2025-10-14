@@ -6,22 +6,29 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="text" placeholder="Enter todo" />
-    <button onclick="addTodo()">Add Todo</button>
-    <div></div>
+    <input type="text" />
+    <button onclick="addTod()">add</button>
   </body>
 
   <script>
-    function addTodo() {
-      const todoInput = document.querySelector("input");
-      const inputVal = todoInput.value;
-      const divEl = document.createElement(
-        <div>
-          <button>delete</button>
-        </div>
-      );
-      divEl.innerHTML = inputVal;
-      document.querySelector("body").appendChild(divEl);
+    let ctr = 1;
+
+    function deleteTodo(index) {
+      const element = document.getElementById(index);
+      element.parentNode.removeChild(element);
+    }
+    function addTod() {
+      const inputEl = document.querySelector("input");
+      const value = inputEl.value;
+      const devDiv = document.createElement("div");
+      const spanel = document.createElement("span");
+      const buttonEl = document.createElement("button");
+      buttonEl.textContent = "delete";
+      spanel.innerHTML = value;
+      spanel.appendChild(buttonEl);
+      devDiv.appendChild(spanel);
+
+      document.querySelector("body").appendChild(devDiv);
     }
   </script>
 </html>
