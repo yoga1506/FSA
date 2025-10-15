@@ -7,28 +7,23 @@
   </head>
   <body>
     <input type="text" />
-    <button onclick="addTod()">add</button>
+    <button onclick="addToDo()">Add</button>
   </body>
-
   <script>
-    let ctr = 1;
-
-    function deleteTodo(index) {
-      const element = document.getElementById(index);
-      element.parentNode.removeChild(element);
+    let todo = [];
+    function addToDo() {
+      todo.push({
+        title: document.querySelector("input").value,
+        id: Date.now(),
+      });
+      render();
     }
-    function addTod() {
-      const inputEl = document.querySelector("input");
-      const value = inputEl.value;
-      const devDiv = document.createElement("div");
-      const spanel = document.createElement("span");
-      const buttonEl = document.createElement("button");
-      buttonEl.textContent = "delete";
-      spanel.innerHTML = value;
-      spanel.appendChild(buttonEl);
-      devDiv.appendChild(spanel);
 
-      document.querySelector("body").appendChild(devDiv);
+    function render() {
+      const parentEl = document.querySelector("body");
+      const h1 = document.createElement("h1");
+      h1.innerHTML = "";
+      parentEl.parentNode.appendChild(h1);
     }
   </script>
 </html>
