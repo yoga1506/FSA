@@ -137,13 +137,23 @@ function App() {
   const [jobs, setJobs] = useState(jobData);
   const [selectedJobId, setSelectedJobId] = useState(null);
   const [searchJob, setSearchJob] = useState("");
+  // const [jobs, setJobs] = useState(sortedJobs); // ✅ use sortedJobs instead of jobData
 
   function handleSelectJob(id) {
     setSelectedJobId(id);
   }
+  const sortedJobs = [...jobData].sort((a, b) => {
+    const getDays = (str) => parseInt(str.split(" ")[0]);
+    return getDays(a.posted) - getDays(b.posted); // Recent first
+  });
 
   function jobSearch() {
-    const filteredJobs = jobData.filter((job) =>
+    if (searchJob.trim() === "") {
+      setJobs(sortedJobs); // ✅ Reset to sorted list
+      return;
+    }
+
+    const filteredJobs = sortedJobs.filter((job) =>
       job.place.toLowerCase().includes(searchJob.toLowerCase())
     );
     setJobs(filteredJobs);
@@ -153,7 +163,7 @@ function App() {
   const selectedJob = jobs.find((job) => job.id === selectedJobId);
 
   return (
-    <div>
+    <div className="text-black">
       <h1 className="text-center">Job Portal</h1>
       <div className="flex items-center justify-center py-10">
         <input
@@ -162,12 +172,16 @@ function App() {
           placeholder="Search by location"
           value={searchJob}
           onChange={(e) => setSearchJob(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") jobSearch();
+          }}
         />
+
         <button onClick={jobSearch} className="bg-red-500 text-white px-4 ml-2">
           Search
         </button>
       </div>
-      <div className="w-screen bg-red-100 h-screen px-10 py-8 flex">
+      <div className="w-screen  h-screen px-10 py-8 flex text-black">
         <JobList
           jobData={jobs} // ✅ Use filtered jobs
           selectedJobId={selectedJobId}
@@ -181,12 +195,12 @@ function App() {
 
 function JobList({ jobData, selectedJobId, handleSelectJob }) {
   return (
-    <div className="w-1/2">
+    <div className="w-1/2 h-[500px] overflow-y-scroll flex items-center justify-center flex-col py-5 mt-6   ">
       <div className="flex justify-center flex-col mt-10">
         <h1>
           {jobData.length} Job{jobData.length !== 1 ? "s" : ""} listed
         </h1>
-        <ul className="mt-10 capitalize flex flex-col gap-4 w-[300px]">
+        <ul className="mt-10 capitalize flex flex-col gap-4 w-[300px] p-5">
           {jobData.map((job) => (
             <li
               onClick={() => handleSelectJob(job.id)}
@@ -195,7 +209,7 @@ function JobList({ jobData, selectedJobId, handleSelectJob }) {
                 selectedJobId === job.id ? "bg-blue-200" : ""
               }`}
             >
-              <h1>{job.title}</h1>
+              <h1 className="font-bold ">{job.title}</h1>
               <p>{job.posted}</p>
               <p>{job.place}</p>
             </li>
@@ -209,18 +223,23 @@ function JobList({ jobData, selectedJobId, handleSelectJob }) {
 function JobDetail({ selectedJob }) {
   if (!selectedJob) {
     return (
-      <div className="w-1/2 bg-green-500 flex items-center justify-center text-white">
+      <div className="w-1/2  flex items-center justify-center text-white">
         <p>Select a job to see details</p>
       </div>
     );
   }
 
   return (
-    <div className="w-1/2 bg-green-500 p-10 text-white capitalize">
-      <h2 className="text-2xl mb-4">{selectedJob.title}</h2>
+    <div className="w-1/2  p-10  capitalize">
+      <h2 className="text-2xl mb-4 font-bold">{selectedJob.title}</h2>
       <p>Posted: {selectedJob.posted}</p>
       <p>Location: {selectedJob.place}</p>
-      <button className="mt-4 px-4 py-2 bg-white text-green-700">Apply</button>
+      <button
+        className="mt-4 px-4 py-1 bg-blue-500 text-white"
+        onClick={() => alert("Application submitted!")}
+      >
+        Apply
+      </button>
     </div>
   );
 }
