@@ -1,10 +1,14 @@
 import React from "react";
+import Form from "./Form";
+import { TodoProvider } from "./Context";
 
 const App = () => {
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <TodoProvider>
+      <div>
+        <Form />
+      </div>
+    </TodoProvider>
   );
 };
 
