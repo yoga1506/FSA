@@ -36,6 +36,7 @@ function CitiesProvider({ children }) {
       setIsLoading(false);
     }
   }
+
   const formatDate = (date) =>
     new Intl.DateTimeFormat("en", {
       day: "numeric",
