@@ -10,17 +10,15 @@ import {
   useMapEvent,
 } from "react-leaflet";
 import { useCities } from "../contexts/CitiesContext";
-import { use } from "react";
 
 const Map = () => {
   const { cities } = useCities();
-
   const [searchParams] = useSearchParams();
 
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
 
-  const [mapPosition, setMapPosition] = useState([40, 0]);
+  const [mapPosition, setMapPosition] = useState([13.0747182, 80.1682206]);
 
   //  this effect is used to control the marker to stay in current place if we come back
 
@@ -29,8 +27,7 @@ const Map = () => {
   }, [mapLat, mapLng]);
 
   return (
-    <div className={styles.mapContainer} onClick={() => navigate("form")}>
-      <h1>hello</h1>
+    <div className={styles.mapContainer}>
       <MapContainer
         className={styles.map}
         center={mapPosition}
