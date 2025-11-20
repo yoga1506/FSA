@@ -10,6 +10,7 @@ import {
   useMapEvent,
 } from "react-leaflet";
 import { useCities } from "../contexts/CitiesContext";
+import { latLng } from "leaflet";
 
 const Map = () => {
   const { cities } = useCities();
@@ -71,7 +72,10 @@ function DetectClick() {
   const navigate = useNavigate();
 
   useMapEvent({
-    click: (e) => navigate(`form`),
+    click: (e) => {
+      console.log(e);
+      navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
+    },
   });
 }
 
