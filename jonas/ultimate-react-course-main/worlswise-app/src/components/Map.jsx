@@ -10,16 +10,23 @@ import {
   useMapEvent,
 } from "react-leaflet";
 import { useCities } from "../contexts/CitiesContext";
-import { latLng } from "leaflet";
+// import { latLng } from "leaflet";
+import Button from "./Button";
+import { useGeolocation } from "../hooks/useGeolocation";
 
 const Map = () => {
   const { cities } = useCities();
+  const [mapPosition, setMapPosition] = useState([40, 0]);
   const [searchParams] = useSearchParams();
+
+  const {
+    isLoading: isLoadingPosition,
+    position: geoLocationPosition,
+    getPosition,
+  } = useGeolocation();
 
   const mapLat = searchParams.get("lat");
   const mapLng = searchParams.get("lng");
-
-  const [mapPosition, setMapPosition] = useState([13.0747182, 80.1682206]);
 
   //  this effect is used to control the marker to stay in current place if we come back
 
@@ -27,8 +34,18 @@ const Map = () => {
     if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
   }, [mapLat, mapLng]);
 
+  useEffect(
+    function () {
+      setMapPosition([geoLocationPosition.lat, geoLocationPosition.lng]);
+    },
+    [geoLocationPosition]
+  );
+
   return (
     <div className={styles.mapContainer}>
+      <Button onClick={getPosition} type="position">
+        {isLoadingPosition ? "Loading..." : "Use Your Position"}
+      </Button>
       <MapContainer
         className={styles.map}
         center={mapPosition}
@@ -39,8 +56,6 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
-        <ChangeCenter position={mapPosition} />
-        <DetectClick />
 
         {cities.map((city) => {
           return (
@@ -54,6 +69,8 @@ const Map = () => {
             </Marker>
           );
         })}
+        <ChangeCenter position={mapPosition} />
+        <DetectClick />
       </MapContainer>
     </div>
   );
@@ -66,7 +83,6 @@ function ChangeCenter({ position }) {
   map.setView(position);
   return null;
 }
-
 // useMapEvent comes from leaf-let libraray and follow the documentation of leaflet Libraray
 function DetectClick() {
   const navigate = useNavigate();
