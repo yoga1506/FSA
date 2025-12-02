@@ -1,0 +1,52 @@
+import Note from "../models/Note.js";
+
+export async function getAllNotes(req, res) {
+  try {
+    const notes = await Note.find().sort({ createdAt: -1 }); // -1 represt latest added notes
+    res.status(200).json(notes);
+  } catch (error) {
+    console.error("error in getAllNotes controller", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+}
+
+export async function createNotes(req, res) {
+  try {
+    const { title, content } = req.body;
+    const newNote = new Note({ title, content });
+    const savedNote = await newNote.save();
+    res.status(201).json(savedNote);
+  } catch (error) {
+    console.error("error in createNotes controller", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+}
+
+export async function updateNote(req, res) {
+  try {
+    const { title, content } = req.body;
+    const updatedNotes = await Note.findByIdAndUpdate(req.params.id, {
+      title,
+      content,
+    });
+    if (!updateNote)
+      return res.status(404).json({ message: "Notes Not Found" });
+    res.status(200).json(updatedNotes);
+  } catch (error) {
+    console.error("error in updateNote controller", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+}
+
+export async function deleteNote(req, res) {
+  try {
+    const { title, content } = req.body;
+    const deletedNote = await Note.findByIdAndDelete(req.params.id);
+    if (!deletedNote)
+      return res.status(404).json({ message: "Notes Not found" });
+    res.status(200).json(deleteNote);
+  } catch (error) {
+    onsole.error("error in deleteNote controller", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+}
