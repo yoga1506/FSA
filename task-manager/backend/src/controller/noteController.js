@@ -46,7 +46,7 @@ export async function deleteNote(req, res) {
       return res.status(404).json({ message: "Notes Not found" });
     res.status(200).json(deleteNote);
   } catch (error) {
-    onsole.error("error in deleteNote controller", error);
+    console.error("error in deleteNote controller", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 }
