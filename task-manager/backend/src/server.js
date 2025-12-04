@@ -3,7 +3,7 @@ import cors from "cors";
 import noteRoutes from "./route/noteRoutes.js";
 import { connectDb } from "./config/db.js";
 import dotenv from "dotenv";
-import rateLimter from "./middlewars/rateLimter.js";
+// import rateLimter from "./middlewars/rateLimter.js";
 dotenv.config();
 
 const app = express();
@@ -15,8 +15,7 @@ app.use(
 );
 
 app.use(express.json());
-app.use(rateLimter);
-
+// app.use(rateLimter);
 app.use("/api/notes", noteRoutes);
 
 connectDb().then(() => {

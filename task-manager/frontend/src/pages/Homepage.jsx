@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import NoteCard from "../components/NoteCard";
+import NotesNotFound from "../components/NotesNotFound";
 
 const Homepage = () => {
   // const [isRateLimited, setIsRateLimited] = useState(false);
@@ -40,6 +41,7 @@ const Homepage = () => {
         {isLoading && (
           <div className="text-primary text-center">Loading Notes...</div>
         )}
+        {notes.length === 0 && <NotesNotFound />}
 
         {notes.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">

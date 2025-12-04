@@ -37,14 +37,23 @@ export async function updateNote(req, res) {
     res.status(500).json({ message: "Internal Server Error" });
   }
 }
+export async function getNoteById(req, res) {
+  try {
+    const note = await Note.findById(req.params.id);
+    if (!note) return res.status(404).json({ message: "Note not found!" });
+    res.json(note);
+  } catch (error) {
+    console.error("Error in getNoteById controller", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+}
 
 export async function deleteNote(req, res) {
   try {
-    const { title, content } = req.body;
     const deletedNote = await Note.findByIdAndDelete(req.params.id);
     if (!deletedNote)
       return res.status(404).json({ message: "Notes Not found" });
-    res.status(200).json(deleteNote);
+    res.status(200).json({ messge: "Notes Deleted Sucesfully" });
   } catch (error) {
     console.error("error in deleteNote controller", error);
     res.status(500).json({ message: "Internal Server Error" });
