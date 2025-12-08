@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import styles from "./Map.module.css";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   MapContainer,
   TileLayer,
@@ -9,17 +7,27 @@ import {
   useMap,
   useMapEvents,
 } from "react-leaflet";
+
+import styles from "./Map.module.css";
+import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
+import { useGeolocation } from "../hooks/useGeolocation";
+import { useUrlPosition } from "../hooks/useUrlPosition.js";
+import Button from "./Button";
 
-const Map = () => {
+function Map() {
   const { cities } = useCities();
+
   const [mapPosition, setMapPosition] = useState([40, 0]);
-  const [searchParams] = useSearchParams();
 
-  const mapLat = searchParams.get("lat");
-  const mapLng = searchParams.get("lng");
+  const {
+    isLoading: isLoadingPosition,
+    position: geolocationPosition,
+    getPosition,
+  } = useGeolocation();
 
-  //  this effect is used to control the marker to stay in current place if we come back
+  const [mapLat, mapLng] = useUrlPosition();
+
   useEffect(
     function () {
       if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
@@ -27,46 +35,66 @@ const Map = () => {
     [mapLat, mapLng]
   );
 
+  useEffect(
+    function () {
+      if (geolocationPosition)
+        setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
+    },
+    [geolocationPosition]
+  );
+
   return (
     <div className={styles.mapContainer}>
+      {!geolocationPosition && (
+        <Button type="position" onClick={getPosition}>
+          {isLoadingPosition ? "Loading..." : "Use Current Position"}
+        </Button>
+      )}
+
+      {!geolocationPosition && (
+        <Button type="position" onClick={getPosition}>
+          {isLoadingPosition ? "Loading..." : "Use your position"}
+        </Button>
+      )}
+
       <MapContainer
-        className={styles.map}
         center={mapPosition}
-        zoom={7}
+        zoom={6}
         scrollWheelZoom={true}
+        className={styles.map}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
+        {cities.map((city) => (
+          <Marker
+            position={[city.position.lat, city.position.lng]}
+            key={city.id}
+          >
+            <Popup>
+              <span>{city.emoji}</span> <span>{city.cityName}</span>
+            </Popup>
+          </Marker>
+        ))}
 
-        {cities.map((city) => {
-          return (
-            <Marker
-              key={city.id}
-              position={[city.position.lat, city.position.lng]}
-            >
-              <Popup>
-                <span>{city.cityName}</span>
-              </Popup>
-            </Marker>
-          );
-        })}
+        <ChangeCenter position={mapPosition} />
+        <DetectClick />
       </MapContainer>
-      <ChangePosition position={mapPosition} />
     </div>
   );
-};
-
-// useMap and setView comes from leaf-let libraray and follow the documentation of leaflet Libraray
-
-function ChangePosition({ position }) {
+}
+function ChangeCenter({ position }) {
   const map = useMap();
+
+  if (!position) return;
+  const [lat, lng] = position;
+  if (lat == null || lng == null) return;
+
   map.setView(position);
   return null;
 }
 
-// useMapEvent comes from leaf-let libraray and follow the documentation of leaflet Libraray
 function DetectClick() {
   const navigate = useNavigate();
 
