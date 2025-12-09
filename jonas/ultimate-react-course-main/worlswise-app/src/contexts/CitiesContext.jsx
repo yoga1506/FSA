@@ -36,6 +36,25 @@ function CitiesProvider({ children }) {
       setIsLoading(false);
     }
   }
+  async function createCity(newCity) {
+    try {
+      setIsLoading(true);
+      const res = await fetch(`${Base_url}/cities`, {
+        method: "POST",
+        body: JSON.stringify(newCity),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      setCities((cities) => [...cities, data]);
+      console.log(data);
+    } catch {
+      alert("Something wrong on fetching city api");
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   const formatDate = (date) =>
     new Intl.DateTimeFormat("en", {
@@ -56,6 +75,7 @@ function CitiesProvider({ children }) {
         setCurrentCity,
         getCities,
         formatDate,
+        createCity,
       }}
     >
       {children}
