@@ -1,168 +1,27 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": "73930385"
+      "id": "7e00"
     },
     {
-      "id": "96c6",
-      "cityName": "Riba de Saelices",
-      "date": "2025-12-09T11:37:43.097Z",
+      "id": "584c",
+      "cityName": "Marvao",
+      "date": "2025-12-19T12:04:26.437Z",
       "notes": "",
       "position": {
-        "lat": "40.93231734387595",
-        "lng": "-2.2869989498297443"
+        "lat": "39.387537393871725",
+        "lng": "-7.382812500000001"
       },
       "emoji": ""
     },
     {
-      "id": "7a66",
-      "cityName": "Pinto",
-      "date": "2025-12-09T11:38:44.096Z",
+      "id": "537d",
+      "cityName": "Torquemada",
+      "date": "2025-12-19T12:04:29.919Z",
       "notes": "",
       "position": {
-        "lat": "40.24863662809685",
-        "lng": "-3.7140916486369706"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "0008",
-      "cityName": "Sernancelhe",
-      "date": "2025-12-09T11:38:49.551Z",
-      "notes": "",
-      "position": {
-        "lat": "40.8660668622028",
-        "lng": "-7.515291644044347"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "6d7f",
-      "cityName": "Pozoblanco",
-      "date": "2025-12-09T11:38:54.224Z",
-      "notes": "",
-      "position": {
-        "lat": "38.173665520239595",
-        "lng": "-4.839755849938466"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "5fd2",
-      "cityName": "Calau",
-      "date": "2025-12-09T11:38:59.607Z",
-      "notes": "",
-      "position": {
-        "lat": "51.83966179480661",
-        "lng": "13.860295129799793"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "229b",
-      "cityName": "Barcabo",
-      "date": "2025-12-17T08:51:27.900Z",
-      "notes": "",
-      "position": {
-        "lat": "42.24614762773109",
-        "lng": "0.06591796875000001"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "c414",
-      "cityName": "Meuzac",
-      "date": "2025-12-17T08:51:27.900Z",
-      "notes": "",
-      "position": {
-        "lat": "45.553117831060696",
-        "lng": "1.47216796875"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "a1ca",
-      "cityName": "Vincennes",
-      "date": "2025-12-17T08:51:27.900Z",
-      "notes": "",
-      "position": {
-        "lat": "48.85070898075469",
-        "lng": "2.4389648437500004"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "7349",
-      "cityName": "Vincennes",
-      "date": "2025-12-17T08:51:27.900Z",
-      "notes": "SS",
-      "position": {
-        "lat": "48.85070898075469",
-        "lng": "2.4389648437500004"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "d0ca",
-      "cityName": "Bergkamen",
-      "date": "2025-12-17T08:51:27.900Z",
-      "notes": "SS",
-      "position": {
-        "lat": "51.61653119037705",
-        "lng": "7.624511718750001"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "51a3",
-      "cityName": "Mieza",
-      "date": "2025-12-18T09:50:22.456Z",
-      "notes": "",
-      "position": {
-        "lat": "41.13109543479805",
-        "lng": "-6.679687500000001"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "bce8",
-      "cityName": "Brieva de Cameros",
-      "date": "2025-12-18T09:54:38.958Z",
-      "notes": "",
-      "position": {
-        "lat": "42.1485385910971",
-        "lng": "-2.7465820312500004"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "0d32",
-      "cityName": "Plaine-d'Argenson",
-      "date": "2025-12-19T09:58:23.000Z",
-      "notes": "",
-      "position": {
-        "lat": "46.13546387743158",
-        "lng": "-0.43945312500000006"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "39d1",
-      "cityName": "Plaine-d'Argenson",
-      "date": "2025-12-19T09:58:23.000Z",
-      "notes": "hello",
-      "position": {
-        "lat": "46.13546387743158",
-        "lng": "-0.43945312500000006"
+        "lat": "42.03410172486685",
+        "lng": "-4.328613281250001"
       },
       "emoji": ""
     }

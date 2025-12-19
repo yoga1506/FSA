@@ -16,7 +16,7 @@ import { useUrlPosition } from "../hooks/useUrlPosition.js";
 import Button from "./Button";
 
 function Map() {
-  const { cities } = useCities();
+  const { cities, setCities } = useCities();
 
   const [mapPosition, setMapPosition] = useState([40, 0]);
 
@@ -67,16 +67,18 @@ function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
-        {cities.map((city) => (
-          <Marker
-            position={[city.position.lat, city.position.lng]}
-            key={city.id}
-          >
-            <Popup>
-              <span>{city.emoji}</span> <span>{city.cityName}</span>
-            </Popup>
-          </Marker>
-        ))}
+        {cities
+          .filter((city) => city?.position?.lat && city?.position?.lng)
+          .map((city) => (
+            <Marker
+              position={[city.position.lat, city.position.lng]}
+              key={city.id}
+            >
+              <Popup>
+                <span>{city.emoji}</span> <span>{city.cityName}</span>
+              </Popup>
+            </Marker>
+          ))}
 
         <ChangeCenter position={mapPosition} />
         <DetectClick />

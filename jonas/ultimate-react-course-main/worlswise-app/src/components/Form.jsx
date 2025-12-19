@@ -35,7 +35,7 @@ function Form() {
   const [isLoadingGeoCoding, setIsLoadingGeoCoding] = useState(false);
   const [geoCodingError, setGeoCodingError] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     if (!cityName && !date) return;
     const newCity = {
@@ -46,7 +46,8 @@ function Form() {
       position: { lat, lng },
       emoji,
     };
-    createCity(newCity);
+    await createCity(newCity);
+    navigate("/app/cities");
   }
 
   useEffect(() => {

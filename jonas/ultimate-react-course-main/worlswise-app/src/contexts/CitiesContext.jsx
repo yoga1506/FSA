@@ -56,6 +56,20 @@ function CitiesProvider({ children }) {
     }
   }
 
+  async function deleteCity(id) {
+    try {
+      setIsLoading(true);
+      await fetch(`${Base_url}/cities/${id}`, {
+        method: "DELETE",
+      });
+      setCities((cities) => cities.filter((city) => city.id !== id));
+    } catch (error) {
+      console.log("Error on Deleting the city.");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   const formatDate = (date) =>
     new Intl.DateTimeFormat("en", {
       day: "numeric",
@@ -76,6 +90,7 @@ function CitiesProvider({ children }) {
         getCities,
         formatDate,
         createCity,
+        deleteCity,
       }}
     >
       {children}

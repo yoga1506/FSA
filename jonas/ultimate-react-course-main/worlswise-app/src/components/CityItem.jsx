@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./CityItem.module.css";
 import { Link } from "react-router-dom";
 import { useCities } from "../contexts/CitiesContext";
@@ -10,23 +9,34 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 const CityItem = ({ city }) => {
-  const { currentCity } = useCities();
+  const { currentCity, deleteCity } = useCities();
 
+  if (!city || !city.position) return null;
   const { emoji, cityName, date, id, position } = city;
+
+  function handleClick(e) {
+    e.preventDefault();
+    console.log("test");
+    deleteCity(id);
+  }
 
   return (
     <li>
-      <Link
-        className={`${styles.cityItem} ${
-          id === currentCity.id ? styles["cityItem--active"] : ""
-        } `}
-        to={`${id}?lat=${position.lat}&lng=${position.lng}`}
-      >
-        <span className={styles.emoji}>{emoji}</span>
-        <h3 className={styles.name}>{cityName}</h3>
-        <time className={styles.date}>{formatDate(date)}</time>
-        <button className={styles.deleteBtn}>&times;</button>
-      </Link>
+     
+        <Link
+          className={`${styles.cityItem} ${
+            id === currentCity.id ? styles["cityItem--active"] : ""
+          } `}
+          to={`${id}?lat=${position.lat}&lng=${position.lng}`}
+        >
+          <span className={styles.emoji}>{emoji}</span>
+          <h3 className={styles.name}>{cityName}</h3>
+          <time className={styles.date}>{formatDate(date)}</time>
+          <button onClick={handleClick} className={styles.deleteBtn}>
+            &times;
+          </button>
+        </Link>
+    
     </li>
   );
 };
