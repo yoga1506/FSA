@@ -4,24 +4,112 @@
       "id": "7e00"
     },
     {
-      "id": "584c",
-      "cityName": "Marvao",
-      "date": "2025-12-19T12:04:26.437Z",
+      "id": "a911",
+      "cityName": "Arguedas",
+      "date": "2025-12-22T08:58:17.849Z",
       "notes": "",
       "position": {
-        "lat": "39.387537393871725",
-        "lng": "-7.382812500000001"
+        "lat": "42.210168472538136",
+        "lng": "-1.534939844707817"
       },
       "emoji": ""
     },
     {
-      "id": "537d",
-      "cityName": "Torquemada",
-      "date": "2025-12-19T12:04:29.919Z",
+      "id": "d784",
+      "cityName": "Villoslada de Cameros",
+      "date": "2025-12-22T09:12:57.545Z",
       "notes": "",
       "position": {
-        "lat": "42.03410172486685",
-        "lng": "-4.328613281250001"
+        "lat": "42.01726223833672",
+        "lng": "-2.7471408538565294"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "b451",
+      "cityName": "Arcos de Jalon",
+      "date": "2025-12-22T09:20:37.664Z",
+      "notes": "",
+      "position": {
+        "lat": "41.22898556556701",
+        "lng": "-2.24189101406832"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "de4e",
+      "cityName": "Villagarcia de Campos",
+      "date": "2025-12-22T09:20:41.320Z",
+      "notes": "xxx",
+      "position": {
+        "lat": "41.772140119045275",
+        "lng": "-5.16409086606547"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "e5c5",
+      "cityName": "Singra",
+      "date": "2025-12-22T09:28:24.362Z",
+      "notes": "",
+      "position": {
+        "lat": "40.66480050421711",
+        "lng": "-1.2753261031691279"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "3c20",
+      "cityName": "Camarzana de Tera",
+      "date": "2025-12-22T09:28:30.160Z",
+      "notes": "",
+      "position": {
+        "lat": "42.03367733541014",
+        "lng": "-6.042554275509345"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "8e02",
+      "cityName": "Mozoncillo",
+      "date": "2025-12-22T09:29:00.240Z",
+      "notes": "",
+      "position": {
+        "lat": "41.13007586233924",
+        "lng": "-4.2204053801740375"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "f606",
+      "cityName": "Villarmayor",
+      "date": "2025-12-22T09:29:05.200Z",
+      "notes": "",
+      "position": {
+        "lat": "41.01400561560634",
+        "lng": "-5.977363830530112"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "41cd",
+      "cityName": "San Esteban de Gormaz",
+      "date": "2025-12-22T09:29:13.383Z",
+      "notes": "",
+      "position": {
+        "lat": "41.54239023938915",
+        "lng": "-3.2964467162837545"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "54c3",
+      "cityName": "Saint-Germain-des-Pres",
+      "date": "2025-12-22T09:29:15.792Z",
+      "notes": "",
+      "position": {
+        "lat": "45.33700915653925",
+        "lng": "0.9865236970011495"
       },
       "emoji": ""
     }
