@@ -112,6 +112,138 @@
         "lng": "0.9865236970011495"
       },
       "emoji": ""
+    },
+    {
+      "id": "3960",
+      "cityName": "Almudevar",
+      "date": "2025-12-24T08:58:10.994Z",
+      "notes": "",
+      "position": {
+        "lat": "42.01782401558561",
+        "lng": "-0.6370345155969172"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "1b7b",
+      "cityName": "Moros",
+      "date": "2025-12-24T09:42:56.033Z",
+      "notes": "",
+      "position": {
+        "lat": "41.428543139084645",
+        "lng": "-1.8015471238513527"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "51eb",
+      "cityName": "Quintana Redonda",
+      "date": "2025-12-24T09:43:04.270Z",
+      "notes": "",
+      "position": {
+        "lat": "41.59276451261101",
+        "lng": "-2.592589788056548"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "e908",
+      "cityName": "Siguenza",
+      "date": "2025-12-24T09:43:07.142Z",
+      "notes": "",
+      "position": {
+        "lat": "41.114720174096206",
+        "lng": "-2.5487049161328312"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "219f",
+      "cityName": "Arcos de Jalon",
+      "date": "2025-12-24T09:43:10.598Z",
+      "notes": "",
+      "position": {
+        "lat": "41.1806766098228",
+        "lng": "-2.1751936180050495"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "8abd",
+      "cityName": "Calamocha",
+      "date": "2025-12-24T11:45:13.777Z",
+      "notes": "w",
+      "position": {
+        "lat": "40.915180974622075",
+        "lng": "-1.1674536376045321"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "89a9",
+      "cityName": "Estercuel",
+      "date": "2025-12-24T11:45:20.695Z",
+      "notes": "ww",
+      "position": {
+        "lat": "40.915180974622075",
+        "lng": "-0.5970700776358685"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "b365",
+      "cityName": "Bokkos",
+      "date": "2025-12-24T11:46:01.414Z",
+      "notes": "",
+      "position": {
+        "lat": "9.285949061715604",
+        "lng": "8.934645770792416"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "6fb3",
+      "cityName": "Villaverde de Montejo",
+      "date": "2025-12-24T11:46:04.732Z",
+      "notes": "",
+      "position": {
+        "lat": "41.52571848362074",
+        "lng": "-3.6705230533657227"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "307b",
+      "cityName": "Valencia de Alcantara",
+      "date": "2025-12-24T11:46:06.826Z",
+      "notes": "",
+      "position": {
+        "lat": "39.50528826375114",
+        "lng": "-7.317999335367352"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "bacc",
+      "cityName": "Tizguite",
+      "date": "2025-12-24T11:46:09.322Z",
+      "notes": "",
+      "position": {
+        "lat": "33.72625298466454",
+        "lng": "-5.212644594794374"
+      },
+      "emoji": ""
+    },
+    {
+      "id": "3642",
+      "cityName": "Ferkla El Oulia",
+      "date": "2025-12-24T11:46:12.458Z",
+      "notes": "",
+      "position": {
+        "lat": "31.43005401102122",
+        "lng": "-5.035528373152584"
+      },
+      "emoji": ""
     }
   ]
 }
