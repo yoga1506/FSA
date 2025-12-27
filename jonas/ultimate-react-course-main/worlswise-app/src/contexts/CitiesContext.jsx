@@ -231,7 +231,7 @@ function CitiesProvider({ children }) {
   const formatDate = (date) =>
     new Intl.DateTimeFormat("en", {
       day: "numeric",
-      month: "long",
+      month: "long", 
       year: "numeric",
     }).format(new Date(date));
 
