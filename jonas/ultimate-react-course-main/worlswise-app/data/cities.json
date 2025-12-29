@@ -15,244 +15,68 @@
       "emoji": ""
     },
     {
-      "id": "d784",
-      "cityName": "Villoslada de Cameros",
-      "date": "2025-12-22T09:12:57.545Z",
+      "id": "21b2",
+      "cityName": "Epila",
+      "date": "2025-12-29T08:13:21.777Z",
       "notes": "",
       "position": {
-        "lat": "42.01726223833672",
-        "lng": "-2.7471408538565294"
+        "lat": "41.5723590182087",
+        "lng": "-1.2277344202183451"
       },
       "emoji": ""
     },
     {
-      "id": "b451",
-      "cityName": "Arcos de Jalon",
-      "date": "2025-12-22T09:20:37.664Z",
+      "id": "17c2",
+      "cityName": "Cabezamesada",
+      "date": "2025-12-29T08:13:23.977Z",
       "notes": "",
       "position": {
-        "lat": "41.22898556556701",
-        "lng": "-2.24189101406832"
+        "lat": "39.872393951417855",
+        "lng": "-3.117881606536131"
       },
       "emoji": ""
     },
     {
-      "id": "de4e",
-      "cityName": "Villagarcia de Campos",
-      "date": "2025-12-22T09:20:41.320Z",
-      "notes": "xxx",
-      "position": {
-        "lat": "41.772140119045275",
-        "lng": "-5.16409086606547"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "e5c5",
-      "cityName": "Singra",
-      "date": "2025-12-22T09:28:24.362Z",
+      "id": "90b7",
+      "cityName": "Marzales",
+      "date": "2025-12-29T08:13:26.369Z",
       "notes": "",
       "position": {
-        "lat": "40.66480050421711",
-        "lng": "-1.2753261031691279"
+        "lat": "41.58885726236965",
+        "lng": "-5.161455012510288"
       },
       "emoji": ""
     },
     {
-      "id": "3c20",
-      "cityName": "Camarzana de Tera",
-      "date": "2025-12-22T09:28:30.160Z",
+      "id": "eac8",
+      "cityName": "Lecera",
+      "date": "2025-12-29T08:33:27.457Z",
       "notes": "",
       "position": {
-        "lat": "42.03367733541014",
-        "lng": "-6.042554275509345"
+        "lat": "41.192995945296516",
+        "lng": "-0.6780023899535405"
       },
       "emoji": ""
     },
     {
-      "id": "8e02",
-      "cityName": "Mozoncillo",
-      "date": "2025-12-22T09:29:00.240Z",
+      "id": "3646",
+      "cityName": "Villadiego",
+      "date": "2025-12-29T08:33:30.633Z",
       "notes": "",
       "position": {
-        "lat": "41.13007586233924",
-        "lng": "-4.2204053801740375"
+        "lat": "42.567209022888775",
+        "lng": "-3.9978684789746626"
       },
       "emoji": ""
     },
     {
-      "id": "f606",
-      "cityName": "Villarmayor",
-      "date": "2025-12-22T09:29:05.200Z",
+      "id": "4fb3",
+      "cityName": "Tabera de Abajo",
+      "date": "2025-12-29T08:33:32.720Z",
       "notes": "",
       "position": {
-        "lat": "41.01400561560634",
-        "lng": "-5.977363830530112"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "41cd",
-      "cityName": "San Esteban de Gormaz",
-      "date": "2025-12-22T09:29:13.383Z",
-      "notes": "",
-      "position": {
-        "lat": "41.54239023938915",
-        "lng": "-3.2964467162837545"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "54c3",
-      "cityName": "Saint-Germain-des-Pres",
-      "date": "2025-12-22T09:29:15.792Z",
-      "notes": "",
-      "position": {
-        "lat": "45.33700915653925",
-        "lng": "0.9865236970011495"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "3960",
-      "cityName": "Almudevar",
-      "date": "2025-12-24T08:58:10.994Z",
-      "notes": "",
-      "position": {
-        "lat": "42.01782401558561",
-        "lng": "-0.6370345155969172"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "1b7b",
-      "cityName": "Moros",
-      "date": "2025-12-24T09:42:56.033Z",
-      "notes": "",
-      "position": {
-        "lat": "41.428543139084645",
-        "lng": "-1.8015471238513527"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "51eb",
-      "cityName": "Quintana Redonda",
-      "date": "2025-12-24T09:43:04.270Z",
-      "notes": "",
-      "position": {
-        "lat": "41.59276451261101",
-        "lng": "-2.592589788056548"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "e908",
-      "cityName": "Siguenza",
-      "date": "2025-12-24T09:43:07.142Z",
-      "notes": "",
-      "position": {
-        "lat": "41.114720174096206",
-        "lng": "-2.5487049161328312"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "219f",
-      "cityName": "Arcos de Jalon",
-      "date": "2025-12-24T09:43:10.598Z",
-      "notes": "",
-      "position": {
-        "lat": "41.1806766098228",
-        "lng": "-2.1751936180050495"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "8abd",
-      "cityName": "Calamocha",
-      "date": "2025-12-24T11:45:13.777Z",
-      "notes": "w",
-      "position": {
-        "lat": "40.915180974622075",
-        "lng": "-1.1674536376045321"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "89a9",
-      "cityName": "Estercuel",
-      "date": "2025-12-24T11:45:20.695Z",
-      "notes": "ww",
-      "position": {
-        "lat": "40.915180974622075",
-        "lng": "-0.5970700776358685"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "b365",
-      "cityName": "Bokkos",
-      "date": "2025-12-24T11:46:01.414Z",
-      "notes": "",
-      "position": {
-        "lat": "9.285949061715604",
-        "lng": "8.934645770792416"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "6fb3",
-      "cityName": "Villaverde de Montejo",
-      "date": "2025-12-24T11:46:04.732Z",
-      "notes": "",
-      "position": {
-        "lat": "41.52571848362074",
-        "lng": "-3.6705230533657227"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "307b",
-      "cityName": "Valencia de Alcantara",
-      "date": "2025-12-24T11:46:06.826Z",
-      "notes": "",
-      "position": {
-        "lat": "39.50528826375114",
-        "lng": "-7.317999335367352"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "bacc",
-      "cityName": "Tizguite",
-      "date": "2025-12-24T11:46:09.322Z",
-      "notes": "",
-      "position": {
-        "lat": "33.72625298466454",
-        "lng": "-5.212644594794374"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "3642",
-      "cityName": "Ferkla El Oulia",
-      "date": "2025-12-24T11:46:12.458Z",
-      "notes": "",
-      "position": {
-        "lat": "31.43005401102122",
-        "lng": "-5.035528373152584"
-      },
-      "emoji": ""
-    },
-    {
-      "id": "c681",
-      "cityName": "Monzon",
-      "date": "2025-12-27T05:53:44.147Z",
-      "notes": "",
-      "position": {
-        "lat": "41.88407545065745",
-        "lng": "0.17577716763367504"
+        "lat": "40.95977200448467",
+        "lng": "-6.062350543720877"
       },
       "emoji": ""
     }

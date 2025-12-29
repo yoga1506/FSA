@@ -14,7 +14,8 @@ import CountryList from "./components/CountryList";
 import City from "./components/City";
 import Form from "./components/Form";
 import { CitiesProvider } from "./contexts/CitiesContext";
-import { AuthProvider } from "./contexts/FakeAuthContext.";
+import { AuthProvider } from "./contexts/FakeAuthContext";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 const App = () => {
   return (
@@ -25,7 +26,14 @@ const App = () => {
             <Route path="product" element={<Product />} />
             <Route path="/" element={<Homepage />} />
             <Route path="pricing" element={<Pricing />} />
-            <Route path="app" element={<AppLayout />}>
+            <Route
+              path="app"
+              element={
+                <ProtectedRoute>
+                  <AppLayout />
+                </ProtectedRoute>
+              }
+            >
               {/* Navigate is used to make the url to hit direct to cities as default  */}
               {/* if we use navigate we must use replace to go back to prev menu or prev page */}
               <Route index element={<Navigate to="cities" replace />} />
