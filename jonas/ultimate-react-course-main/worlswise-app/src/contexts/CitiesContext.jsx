@@ -125,7 +125,7 @@ function reducer(state, action) {
       return { ...state, isLoading: true };
 
     case "cities/loaded":
-      return { ...state, isLoading: false, currentCity: action.payload };
+      return { ...state, isLoading: false, cities: action.payload };
     case "city/loaded":
       return { ...state, isLoading: false, currentCity: action.payload };
 
@@ -231,7 +231,7 @@ function CitiesProvider({ children }) {
   const formatDate = (date) =>
     new Intl.DateTimeFormat("en", {
       day: "numeric",
-      month: "long", 
+      month: "long",
       year: "numeric",
     }).format(new Date(date));
 

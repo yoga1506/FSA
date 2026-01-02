@@ -50,5 +50,5 @@ function usePosts() {
   const context = useContext(PostContext);
   return context;
 }
-
+ 
 export { usePosts, PostProvider };

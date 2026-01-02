@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { usePosts, PostProvider } from "./PostContext";
 import { faker } from "@faker-js/faker";
-
+import Test from "./Test";
 function createRandomPost() {
   return {
     title: `${faker.hacker.adjective()} ${faker.hacker.noun()}`,
@@ -119,15 +119,20 @@ function FormAddPost() {
 
 function List() {
   const { posts } = usePosts();
+  console.log(posts);
+
   return (
-    <ul>
-      {posts.map((post, i) => (
-        <li key={i}>
-          <h3>{post.title}</h3>
-          <p>{post.body}</p>
-        </li>
-      ))}
-    </ul>
+    <>
+      {" "}
+      <ul>
+        {posts.map((post, i) => (
+          <li key={i}>
+            <h3>{post.title}</h3>
+            <p>{post.body}</p>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
