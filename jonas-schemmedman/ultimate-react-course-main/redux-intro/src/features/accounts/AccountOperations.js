@@ -19,8 +19,9 @@ function AccountOperations() {
   console.log(balance);
 
   function handleDeposit() {
-    dispatch(deposits(depositAmount));
+    dispatch(deposits(depositAmount, currency));
     setDepositAmount("");
+    setCurrency("USD");
   }
 
   function handleWithdrawal() {
@@ -56,6 +57,7 @@ function AccountOperations() {
             <option value="USD">US Dollar</option>
             <option value="EUR">Euro</option>
             <option value="GBP">British Pound</option>
+            <option value="INR">inr</option>
           </select>
 
           <button onClick={handleDeposit}>Deposit {depositAmount}</button>

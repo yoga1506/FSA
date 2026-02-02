@@ -34,9 +34,28 @@ export default function accountReducer(state = initialStateAccounts, action) {
       return state;
   }
 }
+export function deposits(amount, currency) {
+  const cur = currency?.toUpperCase?.().trim();
 
-export function deposits(amount) {
-  return { type: "accounts/deposit", payload: amount };
+  if (cur === "USD") {
+    return { type: "accounts/deposit", payload: amount };
+  }
+  // MIDDLEWARE -THUNK
+  return async function (dispatch, getState) {
+    const res = await fetch(
+      `https://api.frankfurter.dev/v1/latest?amount=${amount}&from=${cur}&to=USD`,
+    );
+    const data = await res.json();
+    console.log(data);
+
+    const converted = data?.rates?.USD;
+    if (!converted) {
+      console.error("Currency conversion failed:", data);
+      return;
+    }
+
+    dispatch({ type: "accounts/deposit", payload: converted });
+  };
 }
 
 export function withdraw(amount) {
