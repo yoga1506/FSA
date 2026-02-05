@@ -1,14 +1,14 @@
 import React from "react";
-import Form from "./Form";
-import { TodoProvider } from "./Context";
+import Counter from "./counter";
 
 const App = () => {
   return (
-    <TodoProvider>
+    <div className="flex justify-center items-center h-screen">
       <div>
-        <Form />
+        <h1 className="text-2xl p-4 text-center font-bold capitalize">redux</h1>
+        <Counter />
       </div>
-    </TodoProvider>
+    </div>
   );
 };
 
