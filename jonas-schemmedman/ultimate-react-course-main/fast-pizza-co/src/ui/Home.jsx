@@ -12,8 +12,7 @@ function Home() {
         </span>
       </h1>
 
-      <CreateUser />
-      <Button>Start Ordering</Button>
+      {/* <CreateUser /> */}
     </div>
   );
 }
