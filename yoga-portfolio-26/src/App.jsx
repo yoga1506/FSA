@@ -154,7 +154,7 @@ function App() {
     }
 
     const filteredJobs = sortedJobs.filter((job) =>
-      job.place.toLowerCase().includes(searchJob.toLowerCase())
+      job.place.toLowerCase().includes(searchJob.toLowerCase()),
     );
     setJobs(filteredJobs);
     setSelectedJobId(null); // Reset selection when filtering
@@ -231,6 +231,7 @@ function JobDetail({ selectedJob }) {
 
   return (
     <div className="w-1/2  p-10  capitalize">
+      <p>yogaraj vedagiri</p>
       <h2 className="text-2xl mb-4 font-bold">{selectedJob.title}</h2>
       <p>Posted: {selectedJob.posted}</p>
       <p>Location: {selectedJob.place}</p>
