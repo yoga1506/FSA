@@ -4,7 +4,7 @@ import Button from "../../ui/Button";
 import { addItem, getCartQuantityById } from "../cart/cartSlice";
 import DeleteItem from "../cart/DeleteItem";
 function MenuItem({ pizza }) {
-  const disptach = useDispatch();
+  const dispatch = useDispatch();
 
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
@@ -20,7 +20,7 @@ function MenuItem({ pizza }) {
       quantity: 1,
       totalPrice: unitPrice * 1,
     };
-    disptach(addItem(newItem));
+    dispatch(addItem(newItem));
   }
 
   return (

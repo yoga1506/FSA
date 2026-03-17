@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { formatCurrency } from "../../utils/helpers";
 
 import DeleteItem from "./DeleteItem";
+import UpdateItemQuantity from "./UpdateItemQuantity";
 
 function CartItem({ item }) {
   const { pizzaId, name, quantity, totalPrice } = item;
@@ -14,6 +15,8 @@ function CartItem({ item }) {
       </p>
       <div className="mx-5 flex items-center justify-between sm:gap-6">
         <p className="text-sm font-semibold">{formatCurrency(totalPrice)}</p>
+
+        <UpdateItemQuantity />
 
         <DeleteItem pizzaId={pizzaId} />
       </div>

@@ -3,7 +3,7 @@ import Button from "../../ui/Button";
 import { useDispatch } from "react-redux";
 import { deleteItem } from "./cartSlice";
 
-const ItemDelete = ({ pizzaId }) => {
+const DeleteItem = ({ pizzaId }) => {
   const dispatch = useDispatch();
   return (
     <Button type={"small"} onClick={() => dispatch(deleteItem(pizzaId))}>
@@ -12,4 +12,4 @@ const ItemDelete = ({ pizzaId }) => {
   );
 };
 
-export default ItemDelete;
+export default DeleteItem;
