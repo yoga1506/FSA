@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizz game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="start-screen" class="screen-active">
+        <h1>Qizz game</h1>
+        <p>Test your knowledge with this fun questions</p>
+        <button class="start-quiz">Start Quiz</button>
+      </div>
+
+      <!-- quesyin and all other -->
+      <div class="screen" id="quiz-screen">
+        <div class="quiz-header">
+          <h2 class="question-text">question goes here</h2>
+          <div class="quiz-info"></div>
+          <p>Question <span id="current-question"></span>of <span>5</span></p>
+          <p>score <span id="score">0</span></p>
+        </div>
+        <div class="answer-container" id="answer-container"></div>
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+        <div class="resuit-screen">resuts</div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
