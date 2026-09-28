@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .db {
+        background-color: red;
+        outline: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 5px 10px;
+      }
+      .yoga {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: green;
+        color: white;
+        padding: 8px;
+        margin-bottom: 5px;
+      }
+      ul {
+        list-style-type: none; /* Removes default bullet points */
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To Do App</h1>
+      <input id="inputField" type="text" placeholder="Enter your task" />
+      <button onclick="addTask()">Add</button>
+      <ul id="taskContainers"></ul>
+    </div>
+
+    <script>
+      let savedTask = localStorage.getItem("mytask");
+      let task = savedTask ? JSON.parse(savedTask) : ["hello", "ajkjkj"];
+      let input = document.getElementById("inputField");
+
+      displaytask();
+
+      function savedAndRefresh() {
+        localStorage.setItem("mytask", JSON.stringify(task));
+      }
+
+      function addTask() {
+        let newTask = input.value.trim();
+
+        if (newTask === "") return; // Prevents adding empty tasks
+
+        task.push(newTask);
+        savedAndRefresh();
+        displaytask();
+        input.value = "";
+      }
+
+      function displaytask() {
+        let taskContainers = document.getElementById("taskContainers");
+        taskContainers.innerHTML = "";
+
+        for (let index = 0; index < task.length; index++) {
+          const taskList = document.createElement("li");
+
+          // Create the flexbox container
+          const div = document.createElement("div");
+          div.className = "yoga";
+
+          // Create a span for the text to sit inside the div
+          const taskText = document.createElement("span");
+          taskText.textContent = task[index];
+
+          let deleteBtn = document.createElement("button");
+          deleteBtn.innerText = "Delete";
+          deleteBtn.className = "db";
+
+          deleteBtn.onclick = function () {
+            task.splice(index, 1);
+            savedAndRefresh(); // FIXED: Updates localStorage after deleting
+            displaytask();
+          };
+
+          // FIXED: Append text and button TO THE DIV, then append div TO THE LI
+          div.appendChild(taskText);
+          div.appendChild(deleteBtn);
+          taskList.appendChild(div);
+
+          taskContainers.appendChild(taskList);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,18 +1,31 @@
 import React from "react";
-import Login from "./component/Login";
-
-import { createBrowserRouter, RouterProvider } from "react-router";
-import Home from "./component/Home";
-import Employer from "./component/Employer";
-
-const router = createBrowserRouter([
-  { path: "/login", element: <Login /> },
-  { path: "/", element: <Home /> },
-  { path: "/employer", element: <Employer /> },
-]);
+import { Route, Routes } from "react-router";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Products from "./pages/Products";
+import Contact from "./pages/Contact";
+import Navbar from "./component/Navbar";
 
 const App = () => {
-  return <RouterProvider router={router}>app</RouterProvider>;
+  return (
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />}>
+          Home
+        </Route>
+        <Route path="/about" element={<About />}>
+          About
+        </Route>
+        <Route path="/product" element={<Products />}>
+          Products
+        </Route>
+        <Route path="/contact" element={<Contact />}>
+          Contact
+        </Route>
+      </Routes>
+    </div>
+  );
 };
 
 export default App;
